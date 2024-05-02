@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Nassau County 2022 House Price Trend Map</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.0/mapbox-gl.js"></script>
+    <style>
+        html,
+        head,
+        body,
+        #main-container {
+            height: 100%;
+            width: 100%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-container {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        nav {
+            padding: 1rem;
+            border-bottom: 1px solid #000;
+            display: flex;
+        }
+
+        .nav-links {
+            flex-grow: 1;
+            justify-content: end;
+            display: flex;
+        }
+
+        .nav-link {
+            display: inline-block;
+            font-size: .9rem;
+        }
+
+        #content-container {
+            flex-grow: 1;
+            display: flex;
+            min-height: 0;
+        }
+
+        #sidebar {
+            width: 348px;
+            padding: 1rem;
+            font-size: 0.9rem;
+            overflow-y: scroll;
+            box-sizing: border-box;
+        }
+
+        #map {
+            height: 100%;
+            flex-grow: 1;
+        }
+
+        .title {
+            font-weight: 600;
+        }
+
+        @media only screen and (max-width: 800px) {
+            #content-container {
+                flex-direction: column-reverse;
+            }
+
+            #map {
+                height: 60%;
+                flex-shrink: 0;
+            }
+
+            #sidebar {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main-container">
+        <nav>
+            <div class="title">Housing Market Trends in Nassau City, 2022</div>
+            <div class="nav-links">
+                <a class="nav-link" href="https://github.com/chriswhong/responsive-web-map-layout" target="_blank"
+                    rel="noopener noreferrer">Github</a>
+            </div>
+
+        </nav>
+        <div id="content-container">
+            <div id="sidebar">
+                <h2>Introduction to Housing Market Trends in Nassau City, 2022</h2>
+                <p>Welcome to our interactive exploration of Nassau City's housing market in 2022. This webpage provides
+                    an in-depth look at the average housing prices across different neighborhoods, offering valuable
+                    insights for homeowners, potential buyers, investors, and policy makers.</p>
+                <h3>Why Focus on Nassau City?</h3>
+                <p>Nassau City, with its diverse neighborhoods and vibrant economic landscape, serves as a microcosm for
+                    urban development and housing trends. Understanding the housing prices here not only reflects the
+                    city's economic health but also impacts regional planning and development strategies.</p>
+                <h3>Importance for Urban Economic Studies</h3>
+                <p>Housing prices are more than just numbers; they are vital indicators of a city's economic vitality
+                    and the quality of life of its residents. For urban economists, these figures help in:</p>
+                <ul>
+                    <li><strong>Analyzing Economic Health:</strong> Housing prices provide a direct insight into the
+                        economic stability of the area, influenced by factors like employment rates, income levels, and
+                        local economic policies.</li>
+                    <li><strong>Planning and Development:</strong> Data on housing prices assist planners and developers
+                        in making informed decisions regarding infrastructure development, housing regulations, and
+                        urban policies aimed at sustainability and growth.</li>
+                    <li><strong>Social Implications:</strong> Understanding housing trends helps address issues related
+                        to affordability, equity, and access to housing, which are crucial for ensuring a balanced and
+                        inclusive urban development.</li>
+                </ul>
+                <p>Through the interactive map on this site, you can click on various neighborhoods to see detailed data
+                    on the average housing prices in 2022, alongside historical trends and comparisons. This will
+                    provide you with a clearer picture of where Nassau City stands today and where it might be heading
+                    in the future.</p>
+                <p>We invite you to explore the data and gain insights into the intricate dynamics of Nassau City's
+                    housing market.</p>
+
+            </div>
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+
+</body>
+
+</html>
